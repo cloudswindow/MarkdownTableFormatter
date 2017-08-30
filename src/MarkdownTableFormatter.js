@@ -43,7 +43,6 @@ for (let i = 0; i < lines.length; i++) {
     let cells = [];
     for (let j = 1; j < items.length - 1; j++) {
         let item = items[j].replace(/(^\s*)/g, '').replace(/\s*$/g, '');
-        console.log(item)
         let len = item.length;
         if (len > maxItemLength) {
             maxItemLength = len;
@@ -114,6 +113,6 @@ for (let i = 0; i < rows.length; i++) {
 
     resultLines.push(line);
 }
-
-console.log(`results:\n\r${resultLines.join('\n\r')}`)
+fs.writeFileSync('../out/result.md',resultLines.join("\n"));
+console.log(`results:\n\r${resultLines.join('\n')}`)
 
